@@ -15,7 +15,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
-    // https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink
-    compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.3'
-
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.6.Final'
 }
