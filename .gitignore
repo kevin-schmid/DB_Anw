@@ -1,15 +1,15 @@
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
-.gradle
+**/.gradle
 **/build/
 
 # Ignore Gradle GUI config
-gradle-app.setting
+**/gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
 # Cache of project
-.gradletasknamecache
+**/.gradletasknamecache
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
@@ -17,18 +17,18 @@ gradle-app.setting
 
 
 # From https://github.com/github/gitignore/blob/master/Java.gitignore
-*.class
+**/*.class
 
 # Mobile Tools for Java (J2ME)
-.mtj.tmp/
+**/.mtj.tmp/
 
 # Package Files #
-*.jar
-*.war
-*.ear
+**/*.jar
+**/*.war
+**/*.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+**/hs_err_pid*
 
 
 # From https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
@@ -58,49 +58,49 @@ hs_err_pid*
 **/.idea/mongoSettings.xml
 
 ## File-based project format:
-*.iws
+**/*.iws
 
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+**/out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+**/.idea/modules/
 
 # JIRA plugin
-atlassian-ide-plugin.xml
+**/atlassian-ide-plugin.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+**/com_crashlytics_export_strings.xml
+**/crashlytics.properties
+**/crashlytics-build.properties
+**/fabric.properties
 
 
-*.DS_Store
-.AppleDouble
-.LSOverride
+**/*.DS_Store
+**/.AppleDouble
+**/.LSOverride
 
 # Icon must end with two \r
-Icon
+**/Icon
 
 
 # Thumbnails
 ._*
 
 # Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
+**/.DocumentRevisions-V100
+**/.fseventsd
+**/.Spotlight-V100
+**/.TemporaryItems
+**/.Trashes
+**/.VolumeIcon.icns
+**/.com.apple.timemachine.donotpresent
 
 # Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+**/.AppleDB
+**/.AppleDesktop
+**/Network Trash Folder
+**/Temporary Items
+**/.apdisk
