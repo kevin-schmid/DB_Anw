@@ -9,6 +9,6 @@ Aufgabenstellung: <br />
 5. Test Setup <br />
 6. Test <br />
 
-![INSERT_ER_MODEL_HERE](https://github.com/CodingGentleman/db_anw-EmplyeeTest/blob/master/src/main/resources/ER_Modell.png) <br />
+![INSERT_ER_MODEL_HERE](https://github.com/CodingGentleman/DB_Anw/blob/master/src/main/resources/ER_Modell.png) <br />
 
 
