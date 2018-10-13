@@ -3,11 +3,14 @@
     <persistence-unit name="company" transaction-type="RESOURCE_LOCAL">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>at.fhj.swd.Employee</class>
+        <class>at.fhj.swd.Material</class>
+        <class>at.fhj.swd.Recipe</class>
+        <class>at.fhj.swd.Beer</class>
+        <class>at.fhj.swd.RecipeMaterial</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.65.1.37:5433/swd_ws18_12"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.65.1.37:5433/swd_ws18_12/ue2"/>
             <property name="javax.persistence.jdbc.user" value="swd_ws18_12"/>
             <property name="javax.persistence.jdbc.password" value="WcPx5e"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
