@@ -11,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import java.util.List;
+
 @org.junit.FixMethodOrder(org.junit.runners.MethodSorters.NAME_ASCENDING)
 public class EntityTest {
 
@@ -51,7 +53,6 @@ public class EntityTest {
         transaction.commit();
         beerId = punti.getId();
         assertTrue(punti.getId() > 999);
-
     }
 
     @Test
@@ -62,7 +63,9 @@ public class EntityTest {
         manager.persist(mat);
         transaction.commit();
         matId = mat.getId();
-        assertTrue(mat.getId() == 1);
+
+        List<Material> mats = manager.createQuery("SELECT m FROM Material m", Material.class).getResultList();
+        assertEquals(1, mats.size());
     }
 
     @Test
