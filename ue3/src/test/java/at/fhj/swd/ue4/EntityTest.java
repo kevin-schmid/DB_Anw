@@ -50,7 +50,7 @@ public class EntityTest {
         manager.persist(punti);
         transaction.commit();
         beerId = punti.getId();
-        assertTrue(punti.getId() > 999);
+        assertEquals(1000, punti.getId());
 
     }
 
@@ -62,7 +62,7 @@ public class EntityTest {
         manager.persist(mat);
         transaction.commit();
         matId = mat.getId();
-        assertTrue(mat.getId() == 1);
+        assertEquals(1, mat.getId());
     }
 
     @Test

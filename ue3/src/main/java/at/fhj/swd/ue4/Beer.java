@@ -8,7 +8,7 @@ public class Beer {
 
     @Id
     @Column(name = "beer_id")
-    @SequenceGenerator (name = "seq_beer", sequenceName = "seq_beer", allocationSize = 1)
+    @SequenceGenerator (name = "seq_beer", sequenceName = "seq_beer", allocationSize = 1, initialValue = 1000)
     @GeneratedValue (generator = "seq_beer")
     private int beerId;
     private String name;
