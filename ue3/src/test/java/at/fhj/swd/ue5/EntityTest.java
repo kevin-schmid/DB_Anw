@@ -1,6 +1,6 @@
 package at.fhj.swd.ue5;
 
-import at.fhj.swd.dao.Persistence;
+import at.fhj.swd.persistence.Persistence;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

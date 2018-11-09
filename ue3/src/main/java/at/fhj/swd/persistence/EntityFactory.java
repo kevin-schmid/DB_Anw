@@ -1,4 +1,4 @@
-package at.fhj.swd.dao;
+package at.fhj.swd.persistence;
 
 public abstract class EntityFactory<T extends Entity> implements EntityCreator<T>{
     protected abstract T createEntity();

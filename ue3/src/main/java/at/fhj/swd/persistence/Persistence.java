@@ -1,4 +1,4 @@
-package at.fhj.swd.dao;
+package at.fhj.swd.persistence;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,6 +12,10 @@ public enum Persistence {
     private EntityManagerFactory managerFactory;
 
     Persistence(){}
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
 
     public void create(String persistenceName) {
         managerFactory = javax.persistence.Persistence.createEntityManagerFactory(persistenceName);
@@ -28,19 +32,35 @@ public enum Persistence {
     }
 
     public <T extends Entity> T find(Class<T> entityClass, int id) {
-        return entityManager.find(entityClass, id);
+        T result = entityManager.find(entityClass, id);
+        // needed to ignore cache
+        this.refresh(result);
+        return result;
     }
 
     public <T extends Entity> List<T> findAll(Class<T> entityClass) {
         Query q = entityManager.createQuery("from "+entityClass.getSimpleName());
-        return q.getResultList();
+        final List<T> resultList = q.getResultList();
+        // needed to ignore cache
+        resultList.forEach(r -> this.refresh(r));
+        return resultList;
     }
 
     public void remove(Entity entity) {
         inTransaction(() -> entityManager.remove(entity));
     }
 
-    public void inTransaction(Runnable runnable) {
+    public void merge(Entity entity) {
+        inTransaction(() -> entityManager.merge(entity));
+    }
+
+    public void refresh(Entity entity) {
+        if(entity != null) {
+            entityManager.refresh(entity);
+        }
+    }
+
+    private void inTransaction(Runnable runnable) {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         runnable.run();

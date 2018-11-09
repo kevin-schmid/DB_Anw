@@ -35,8 +35,8 @@
 
     <persistence-unit name="ue6" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>at.fhj.swd.ue4.Recipe</class>
-        <class>at.fhj.swd.ue4.Beer</class>
+        <class>at.fhj.swd.ue6.Recipe</class>
+        <class>at.fhj.swd.ue6.Ingredient</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.65.1.37:5433/swd_ws18_12"/>
@@ -44,6 +44,7 @@
             <property name="javax.persistence.jdbc.password" value="WcPx5e"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.default_schema" value="ue6"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
@@ -60,6 +61,7 @@
             <property name="javax.persistence.jdbc.password" value="WcPx5e"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.default_schema" value="ue7"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>
@@ -76,6 +78,7 @@
             <property name="javax.persistence.jdbc.password" value="WcPx5e"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.default_schema" value="ue8"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>

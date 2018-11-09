@@ -1,13 +1,13 @@
 package at.fhj.swd.ue5;
 
-import at.fhj.swd.dao.EntityCreator;
-import at.fhj.swd.dao.EntityFactory;
+import at.fhj.swd.persistence.EntityCreator;
+import at.fhj.swd.persistence.EntityFactory;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "bundle")
-public class Bundle implements at.fhj.swd.dao.Entity {
+public class Bundle implements at.fhj.swd.persistence.Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

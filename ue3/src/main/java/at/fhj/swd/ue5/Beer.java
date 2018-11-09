@@ -1,7 +1,7 @@
 package at.fhj.swd.ue5;
 
-import at.fhj.swd.dao.EntityCreator;
-import at.fhj.swd.dao.EntityFactory;
+import at.fhj.swd.persistence.EntityCreator;
+import at.fhj.swd.persistence.EntityFactory;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "beer")
-public class Beer implements at.fhj.swd.dao.Entity {
+public class Beer implements at.fhj.swd.persistence.Entity {
 
     @Id
     @Column(name = "beer_id")
