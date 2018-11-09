@@ -16,7 +16,7 @@ public class Bundle implements at.fhj.swd.dao.Entity {
 
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "beer_id")
     private Beer beer;
 
@@ -40,7 +40,8 @@ public class Bundle implements at.fhj.swd.dao.Entity {
 
     public void setBeer(Beer beer) {
         this.beer = beer;
-        beer.addBundle(this);
+        if(beer != null)
+            beer.addBundle(this);
     }
 
     public static SetName factory() {

@@ -45,16 +45,24 @@ public class EntityTest {
     }
 
     @Test
-    public void removeBundle() {
+    public void removeABundle() {
         Beer beer = P.find(Beer.class, beerId);
         assertNotNull(beer);
         assertEquals(2, beer.getBundles().size());
         Bundle bundle = beer.getBundles().get(0);
-        int bundleId = bundle.getBundleId();
+        beer.removeBundle(bundle);
         P.remove(bundle);
-        bundle = P.find(Bundle.class, bundleId);
-        assertNull(bundle);
-        beer = P.find(Beer.class, beerId);
-        assertEquals(1, beer.getBundles().size());
+        assertEquals(1, P.findAll(Bundle.class).size());
     }
+
+    @Test
+    public void removeBeer() {
+        Beer beer = P.find(Beer.class, beerId);
+        assertNotNull(beer);
+        assertEquals(1, beer.getBundles().size());
+        P.remove(beer);
+        assertTrue(P.findAll(Beer.class).isEmpty());
+        assertTrue(P.findAll(Bundle.class).isEmpty());
+    }
+
 }

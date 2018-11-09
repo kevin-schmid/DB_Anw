@@ -13,7 +13,7 @@ public class Beer implements at.fhj.swd.dao.Entity {
 
     @Id
     @Column(name = "beer_id")
-    @SequenceGenerator (name = "seq_beer", sequenceName = "seq_beer", allocationSize = 1)
+    @SequenceGenerator (name = "seq_beer", sequenceName = "seq_beer", initialValue = 1000, allocationSize = 1)
     @GeneratedValue (generator = "seq_beer")
     private int beerId;
 
@@ -23,7 +23,7 @@ public class Beer implements at.fhj.swd.dao.Entity {
     @Column(name = "beer_type")
     private BeerType beerType;
 
-    @OneToMany(mappedBy = "beer", orphanRemoval=true)
+    @OneToMany(mappedBy = "beer", cascade = CascadeType.ALL, orphanRemoval=true)
     private final List<Bundle> bundleList = new ArrayList<>();
 
     protected Beer() {}
@@ -49,6 +49,11 @@ public class Beer implements at.fhj.swd.dao.Entity {
     public void addBundle(Bundle bundle) { bundleList.add(bundle); }
 
     public List<Bundle> getBundles() { return new ArrayList<>(bundleList); }
+
+    public void removeBundle(Bundle bundle) {
+        bundle.setBeer(null);
+        bundleList.remove(bundle);
+    }
 
     public static BeerFactory factory() {
         return new BeerFactory();

@@ -3,11 +3,13 @@ package at.fhj.swd.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
+import java.util.List;
 
 public enum Persistence {
     INST;
     private EntityManager entityManager;
-    EntityManagerFactory managerFactory;
+    private EntityManagerFactory managerFactory;
 
     Persistence(){}
 
@@ -27,6 +29,11 @@ public enum Persistence {
 
     public <T extends Entity> T find(Class<T> entityClass, int id) {
         return entityManager.find(entityClass, id);
+    }
+
+    public <T extends Entity> List<T> findAll(Class<T> entityClass) {
+        Query q = entityManager.createQuery("from "+entityClass.getSimpleName());
+        return q.getResultList();
     }
 
     public void remove(Entity entity) {
