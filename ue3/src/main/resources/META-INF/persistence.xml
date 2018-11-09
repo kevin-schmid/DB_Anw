@@ -52,8 +52,9 @@
 
     <persistence-unit name="ue7" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>at.fhj.swd.ue4.Recipe</class>
-        <class>at.fhj.swd.ue4.Beer</class>
+        <class>at.fhj.swd.ue7.Drink</class>
+        <class>at.fhj.swd.ue7.Beer</class>
+        <class>at.fhj.swd.ue7.Wine</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.65.1.37:5433/swd_ws18_12"/>
